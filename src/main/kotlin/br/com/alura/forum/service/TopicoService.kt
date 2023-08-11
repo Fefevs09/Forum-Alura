@@ -58,7 +58,7 @@ class TopicoService(private var topicos: List<Topico>) {
                 email = "teste@email.com",
             ),
         )
-        topicos = Arrays.asList(topico, topico, topico)
+        topicos = Arrays.asList(topico, topico2, topico3)
     }
 
     fun listar():List<Topico> {
@@ -66,9 +66,9 @@ class TopicoService(private var topicos: List<Topico>) {
     }
 
     fun buscarPorId(id: Long): Topico {
-        return topicos.stream().filter { t ->
-            t.id == id
-        }.findFirst().get()
+        return topicos.stream().filter({
+            t -> t.id == id
+            }).findFirst().get()
 
     }
 }
